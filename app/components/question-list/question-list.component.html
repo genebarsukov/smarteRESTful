@@ -1,0 +1,67 @@
+<div class="story-list-container">
+   <div class="search-container">
+      <input class="search-box" type="text" name="search-box"
+             placeholder="{{search_text_hint}}"
+             [(ngModel)]="search_pattern"
+             (keypress)="onInputKeyPress($event)"
+             (click)="$event.srcElement.setSelectionRange(0, $event.srcElement.value.length)">
+
+      <div class="search-button-container">
+         <div class="search-button"
+              (click)="searchQuestions($event)"></div>
+      </div>
+      <div class="add-new-question-button" (click)="addNewQuestion()"> </div>
+      <div class="paging-container">
+         <table class="paging-table">
+            <tr>
+               <td class="page-down expand-story-button"
+                  (click)="pageDown()">
+                  &#9668;
+               </td>
+               <td class="current-page">
+                  {{ pager.page }}
+               </td>
+               <td class="page-up expand-story-button"
+                   (click)="pageUp()">
+                   &#9658;
+               </td>
+            </tr>
+            <tr>
+               <td colspan="3" class="total-pages">
+                  Total Pages: {{ pager.max_pages }}
+               </td>
+            </tr>
+
+         </table>
+      </div>
+   </div>
+
+   <table class="question-list-header">
+      <tr>
+         <th (click)="sortQuestions('question')"> Question </th>
+         <th (click)="sortQuestions('answer')"> Answer </th>
+         <th (click)="sortQuestions('distractors')" class="distractor-column"> Distractors </th>
+         <th class="inactive-column"> </th>
+      </tr>
+   </table>
+   <ul class="story-list" *ngIf="questions">
+      <div *ngIf="questions.length == 0"> No questions found...</div>
+      <li class="story-list-item" *ngFor="let question of questions">
+
+         <table class="story-list-item-table">
+            <tr class="story-header"
+                [class.expanded]="question.collapsed"
+                [class.highlighted]="false">
+               <td>
+                  <question
+                     [question_id]="question.question_id"
+                     [question]="question.question"
+                     [answer]="question.answer"
+                     [distractors]="question.distractors">
+                  </question>
+               </td>
+            </tr>
+         </table>
+      </li>
+   </ul>
+</div>

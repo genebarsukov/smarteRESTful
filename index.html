@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>SmarteRESTful</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="../../modules/smarterestful/styles.css">
+     <link rel="shortcut icon" type="image/x-icon" href="./mad_fuzz_favicon.ico">
+     <!-- Polyfill(s) for older browsers -->
+     <!-- <script src="node_modules/core-js/client/shim.min.js"></script> -->
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+     <script src="../node_modules/zone.js/dist/zone.js"></script>
+     <script src="https://code.angularjs.org/tools/typescript.js"></script>
+     <script src="../node_modules/reflect-metadata/Reflect.js"></script>
+     <script src="../node_modules/systemjs/dist/system.src.js"></script>
+     <script async src="../../modules/node_modules/zone.js/dist/zone.min.js"></script>
+        -->
+
+     <script src="../node_modules/core-js/client/shim.min.js"></script>
+
+     <script src="../node_modules/zone.js/dist/zone.js"></script>
+     <script async src="../node_modules/reflect-metadata/Reflect.js"></script>
+     <script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+     <script src="./systemjs.config.js"></script>
+     <script src="./loader.js"></script>
+
+     <script>
+       System.import('app').catch(function(err){ console.error(err); });
+     </script>
+     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0 maximum-scale=1.0" />
+   </head>
+
+   <body>
+    <app class="center">
+       <div class="app-loading-container">
+          <div id="app-loading-text" class="app-loading-text">
+             Loading App...
+          </div>
+       </div>
+    </app>
+   </body>
+ </html>

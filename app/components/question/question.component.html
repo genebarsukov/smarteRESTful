@@ -1,0 +1,56 @@
+<div>
+   <table class="question-item-table">
+      <tr class="data-row" *ngIf="! editing">
+         <td class="q-cell">
+            {{ question }}
+         </td>
+         <td class="q-cell">
+            {{ answer }}
+         </td>
+         <td class="q-cell distractor">
+            <div class="inline-container" *ngFor="let distractor of distractors">
+               {{ distractor.distractor }}
+            </div>
+         </td>
+         <td class="q-cell">
+            <div class="inline-container padded">
+               <div class="expand-story-button" (click)="editQuestion()"> Edit </div>
+            </div>
+            <div class="inline-container padded">
+               <div class="expand-story-button" (click)="deleteQuestion()"> Delete </div>
+            </div>
+         </td>
+      </tr>
+      <tr class="data-row expanded" *ngIf="editing" >
+         <td class="q-cell">
+            <input class="question-input-box question"
+                   [(ngModel)]="question"
+                   (keypress)="onInputKeyPress($event)"
+                   (click)="$event.srcElement.setSelectionRange(0, $event.srcElement.value.length)"/>
+         </td>
+         <td class="q-cell">
+            <input class="question-input-box answer"
+                   [(ngModel)]="answer"
+                   (keypress)="onInputKeyPress($event)"
+                   (click)="$event.srcElement.setSelectionRange(0, $event.srcElement.value.length)"/>
+         </td>
+         <td class="q-cell distractor">
+            <div class="inline-container" *ngFor="let distractor of distractors">
+               <input class="question-input-box distractor"
+                      [(ngModel)]="distractor.distractor"
+                      (keypress)="onInputKeyPress($event)"
+                      (click)="$event.srcElement.setSelectionRange(0, $event.srcElement.value.length)"/>
+            </div>
+         </td>
+         <td class="q-cell">
+            <div class="inline-container padded">
+               <div class="expand-story-button distractor" (click)="addDistractor()"> Add Distractor </div>
+            </div>
+            <div class="inline-container padded">
+               <div class="expand-story-button save" (click)="saveQuestion()"> Save </div>
+            </div>
+            <div class="collapse-question-button" (click)="collapseQuestion()"> </div>
+         </td>
+      </tr>
+   </table>
+</div>

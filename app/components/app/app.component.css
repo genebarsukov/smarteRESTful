@@ -1,0 +1,128 @@
+.app-header {
+   color: #00BFFF;
+   font-size: 24pt;
+   background-color: #FFF;
+   text-shadow: 2px 2px 4px rgba(180,180,180,0.5);
+}
+.app-table {
+   font-family: Arial;
+   background-color: #FFF;
+   min-width: 50%;
+   min-height: 100%;
+   border-collapse: collapse;
+}
+@media screen and (max-width: 1000px) {
+   .app-table,
+   .story-list {
+      width: 100%;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .app-table,
+   .story-list-item {
+      width: 800px;
+   }
+}
+@media screen and (min-width: 1900px) {
+   .app-table,
+   .story-list-item {
+      width: 1000px;
+   }
+}
+@media screen and (min-width: 2500px) {
+   .app-table,
+   .story-list-item {
+      width: 1500px;
+   }
+}
+@media screen and (min-width: 3800px) {
+   .app-table,
+   .story-list-item {
+      width: 2000px;
+   }
+}
+
+.app-cell {
+   padding: 0px;
+   display: block;
+   text-align: left;
+   width: 100%;
+}
+
+tr.story-list-row {
+   padding: 0px;
+   height: 100%;
+}
+td.story-list-cell {
+   padding: 0px;
+   height: 100%;
+   background-color: #404040;
+   vertical-align: top;
+   border-spacing: 0px;
+}
+#preload {
+   display: none;
+}
+table.fuzz-table {
+   width: 100%;
+   background-color: #404040;
+   border-collapse: collapse;
+   box-shadow: inset 2px 2px 5px rgba(180,180,180,0.5);
+   -moz-box-shadow: inset 2px 2px 5px rgba(180,180,180,0.5);
+   -webkit-box-shadow: inset 2px 2px 5px rgba(180,180,180,0.5);
+}
+td.fuzz-cell {
+   padding: 0px;
+}
+td.fuzz-cell.left {
+   vertical-align: bottom;
+}
+td.fuzz-cell.right {
+   width: 100%;
+   vertical-align: top;
+}
+td.logo-cell {
+   display: inline-block;
+}
+.logo-img {
+   padding: 0px;
+   margin: auto;
+}
+.fuzz-block {
+   padding: 0px;
+   height: 5px;
+   border-radius: 2px;
+}
+.fuzz-block.left {
+   width: 100%;
+   display: none;
+   margin-bottom: 8px;
+   background-color: #FFF;
+   border: 1px solid #AAA;
+}
+.fuzz-block.right {
+   padding: 0px;
+   width: 99%;
+   margin-top: 3px;
+   background-color: #0094FF;
+   border: 1px solid #004A7F;
+}
+
+@media screen and (max-width: 800px) {
+   .logo-img {
+      height: 30px;
+   }
+   .fuzz-block {
+      height: 3px;
+   }
+   .fuzz-block.right {
+      margin-top: 2px;
+   }
+}
+img.logo-img {
+   position: relative;
+   z-index: 200;
+}
+img.logo-img:hover {
+   cursor: pointer;
+}
