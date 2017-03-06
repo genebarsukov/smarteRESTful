@@ -1,16 +1,12 @@
 #smarteRESTful API and web app
 
-This is a simple web application
-
-It uses a PHP back-end API which you can test here:
+###This is a simple web application designed for testing purposes
+* It uses a PHP back-end API which you can test here:
 http://codewrencher.com/smarterestful/
-
-It uses an Angular 2 front end which you can test here:
+* It uses an Angular 2 front end which you can test here:
 http://codewrencher.com/modules/smarterestful/
-
-It uses MySQL as the database.
-
-There is a python script that loads the data initially into the database in /data_loader
+* It uses MySQL as the database to store all the questions.
+* There is a python script that loads the data initially into the database in /data_loader
 
 ##Structure
 ###API Typical usages:
