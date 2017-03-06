@@ -9,20 +9,20 @@ http://codewrencher.com/modules/smarterestful/
 * There is a python script that loads the data initially into the database in /data_loader
 
 ##Structure
-###API Typical usages:
+###API typical usage cases:
 http://codewrencher.com/smarterestful/  Brings up all the questions from the first page, 100 by default
 http://codewrencher.com/smarterestful/{id}  Returns the question with the specified id
 http://codewrencher.com/smarterestful/?pattern=find_me  Returns the search results for all question fields containing 'pattern'
 Paging and sorting is also done ny passing the current paging and sorting params
 
-###Back End:
+###Back end:
 * All of the back-end code is in /app/api
 * smarterestful.php is the main back end endpoint through which everything goes through.
 * Requests are routed with an .htaccess file which actually lives outside the project:
 * RewriteRule ^smarterestful(.*) /modules/smarterestful/app/api/smarterestful.php [L]
 * RequestHandler parses and decides what to do with all the requests
 
-###Front End:
+###Front end:
 * All of the front-end code lives in /app
 * Angular 2 written in TypeScript
 * The main functional components are in /app/components
