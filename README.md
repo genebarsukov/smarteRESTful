@@ -1,3 +1,5 @@
+#smarteRESTful API and web app
+
 This is a simple web application
 
 It uses a PHP back-end API which you can test here:
