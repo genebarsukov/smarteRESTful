@@ -21,8 +21,8 @@ Paging and sorting is also done ny passing the current paging and sorting params
 
 ###Back End:
 All of the back end code is in /app/api
-smarterestful.php is the main back end endpoint through which everything goes through.
-Request are routed with an .htaccess file which actually lives outside the project:
+* smarterestful.php is the main back end endpoint through which everything goes through.
+* Requests are routed with an .htaccess file which actually lives outside the project:
 RewriteRule ^smarterestful(.*) /modules/smarterestful/app/api/smarterestful.php [L]
 RequestHandler parses and decides what to do with all the requests
 
