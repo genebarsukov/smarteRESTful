@@ -3,6 +3,7 @@ import {Component, OnDestroy, Input} from '@angular/core';
 import {QuestionDataService} from 'app/services/question-data.service';
 import {Subscription} from 'rxjs/Subscription';
 import {Question} from "../../models/Question";
+import {ApiResponse} from "../../models/api-response";
 
 @Component({
     selector: 'question',
@@ -47,9 +48,10 @@ export class QuestionComponent implements OnDestroy {
 
     /**
      * Callback: Called when updateQuestion() response is received from the server
-     * @param updated_question: Returned date for the updated question
+     * @param api_response: Returned date for the updated question
      */
-    finishSaveQuestion(updated_question: Question[]) {
+    finishSaveQuestion(api_response: ApiResponse) {
+        let updated_question = api_response.questions[0];
         this.editing = false;
 
         if (updated_question != null) {
@@ -72,9 +74,10 @@ export class QuestionComponent implements OnDestroy {
 
     /**
      * Callback: Called when deleteQuestion() response is received from the server
-     * @param deleted_questions: Returned data for the deleted question
+     * @param api_response: Returned data for the deleted question
      */
-    finishDeleteQuestion(deleted_questions: Question[]) {
+    finishDeleteQuestion(api_response: ApiResponse) {
+        let deleted_questions = api_response.questions;
         this.editing = false;
 
         if (deleted_questions.length) {
