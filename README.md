@@ -32,7 +32,7 @@ All of the code lives in /app
 The main functional components are in /app/components
 The component that handles most of the logic for the page is in /app/components/question-list/qurstion-list.components.ts
 
-###A note on performance
+###A note on performance:
 There is an easy way to reduce the Angular 2 loading time significantly by pre-compling all the TypeScript into its javascript intermediaries and to minify everything and put it in a nice package using rollup
 
 This would probably reduce the loading times of this web app by at least 50%-75%, but it requires a compuling script to be run every time changes are made.
