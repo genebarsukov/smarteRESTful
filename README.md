@@ -20,15 +20,15 @@ http://codewrencher.com/smarterestful/?pattern=find_me  Returns the search resul
 Paging and sorting is also done ny passing the current paging and sorting params
 
 ###Back End:
-All of the back end code is in /app/api
+* All of the back-end code is in /app/api
 * smarterestful.php is the main back end endpoint through which everything goes through.
 * Requests are routed with an .htaccess file which actually lives outside the project:
 * RewriteRule ^smarterestful(.*) /modules/smarterestful/app/api/smarterestful.php [L]
 * RequestHandler parses and decides what to do with all the requests
 
 ###Front End:
+* All of the front-end code lives in /app
 * Angular 2 written in TypeScript
-* All of the code lives in /app
 * The main functional components are in /app/components
 * The component that handles most of the logic for the page is in /app/components/question-list/qurstion-list.components.ts
 
